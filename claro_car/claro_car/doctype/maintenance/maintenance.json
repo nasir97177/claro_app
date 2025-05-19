@@ -1,0 +1,278 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2025-03-13 14:24:10.416052",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle_section",
+  "naming_series",
+  "license_plate",
+  "employee",
+  "column_break_7",
+  "posting_date",
+  "model",
+  "make",
+  "odometer_reading",
+  "odometer",
+  "column_break_12",
+  "last_odometer",
+  "refuelling_details",
+  "maintenance_shop",
+  "maintenance_worker",
+  "column_break_15",
+  "supplier",
+  "invoice",
+  "next_service_date",
+  "service_details",
+  "service_detail",
+  "maintenance_cost_section",
+  "worker_cost",
+  "company_cost",
+  "total_cost",
+  "amended_from",
+  "column_break_xdam",
+  "paid_from",
+  "paid_to",
+  "cost_center",
+  "comments"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle_section",
+   "fieldtype": "Section Break",
+   "options": "fa fa-user"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "VMA-.YYYY.-",
+   "print_hide": 1,
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "license_plate",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "License Plate",
+   "options": "Vehicle",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "license_plate.employee",
+   "fetch_if_empty": 1,
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Worker ID",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "license_plate.model",
+   "fieldname": "model",
+   "fieldtype": "Read Only",
+   "label": "Model"
+  },
+  {
+   "fetch_from": "license_plate.make",
+   "fieldname": "make",
+   "fieldtype": "Read Only",
+   "label": "Make"
+  },
+  {
+   "fieldname": "odometer_reading",
+   "fieldtype": "Section Break",
+   "label": "Odometer Reading"
+  },
+  {
+   "fieldname": "odometer",
+   "fieldtype": "Int",
+   "label": "Mileage",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "license_plate.last_odometer",
+   "fieldname": "last_odometer",
+   "fieldtype": "Int",
+   "label": "Last Odometer Value ",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "refuelling_details",
+   "fieldtype": "Section Break",
+   "label": "Maintenance Shop Information"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "invoice",
+   "fieldtype": "Data",
+   "label": "Invoice Ref"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "service_details",
+   "fieldtype": "Section Break",
+   "label": "Maintenance Service Details"
+  },
+  {
+   "fieldname": "service_detail",
+   "fieldtype": "Table",
+   "options": "Maintenance Service"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Maintenance",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Maintenance",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "maintenance_shop",
+   "fieldtype": "Data",
+   "label": "Maintenance Shop",
+   "options": "Supplier",
+   "reqd": 1
+  },
+  {
+   "fieldname": "maintenance_worker",
+   "fieldtype": "Data",
+   "label": "Maintenance Worker",
+   "options": "Supplier",
+   "reqd": 1
+  },
+  {
+   "fieldname": "maintenance_cost_section",
+   "fieldtype": "Section Break",
+   "label": "Maintenance Cost"
+  },
+  {
+   "fieldname": "column_break_xdam",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Small Text",
+   "label": "Comments",
+   "reqd": 1
+  },
+  {
+   "fieldname": "next_service_date",
+   "fieldtype": "Date",
+   "label": "Next Service Date",
+   "print_hide": 1,
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "worker_cost",
+   "fieldtype": "Currency",
+   "label": "Worker Cost"
+  },
+  {
+   "fieldname": "company_cost",
+   "fieldtype": "Currency",
+   "label": "Company Cost"
+  },
+  {
+   "fieldname": "paid_from",
+   "fieldtype": "Link",
+   "label": "Paid From",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "paid_to",
+   "fieldtype": "Link",
+   "label": "Paid To",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "label": "Total Cost"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Visit Date",
+   "reqd": 1
+  },
+  {
+   "default": "Main - C",
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-03-13 16:03:41.864593",
+ "modified_by": "Administrator",
+ "module": "Claro Car",
+ "name": "Maintenance",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Fleet Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

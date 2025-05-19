@@ -149,6 +149,12 @@ app_license = "mit"
 # ---------------
 
 # scheduler_events = {
+#     "hourly": [
+#         "claro_car.sync_customers.sync_customers"
+#     ]
+# }
+
+# scheduler_events = {
 # 	"all": [
 # 		"claro_car.tasks.all"
 # 	],
@@ -242,3 +248,6 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+# api_methods = {
+#     "sync_customers": "claro_car.sync_customers.sync_customers"
+# }
